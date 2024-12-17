@@ -1,4 +1,8 @@
 import nodeFetch from "node-fetch";
+export {
+  fetchJson,
+  fetchText
+} from "./util-helper/fetch-helper";
 
 export * from "./util-helper/node-helper";
 

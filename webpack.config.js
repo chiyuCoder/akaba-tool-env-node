@@ -8,6 +8,10 @@ module.exports = {
     devtool: process.env.NODE_ENV === "development" ? "source-map" : undefined,
     entry: {
         "index": path.join(__dirname, "./src/index.ts"),
+        "util-helper/fetch-helper": path.join(__dirname, "./src/util-helper/fetch-helper.ts"),
+        "util-helper/file-sys-helper": path.join(__dirname, "./src/util-helper/file-sys-helper.ts"),
+        "util-helper/node-helper": path.join(__dirname, "./src/util-helper/node-helper.ts"),
+        "util-helper/path-helper": path.join(__dirname, "./src/util-helper/path-helper.ts"),
     },
     output: {
         path: path.join(__dirname, "./lib"),

@@ -1,6 +1,6 @@
 {
   "name": "akaba-tool-env-node",
-  "version": "1.2.2",
+  "version": "0.0.1",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -33,5 +33,9 @@
   "peerDependencies": {
     "node-fetch": "^2.7.0",
     "akaba-tool": "^1.0.14"
+  },
+  "dependencies": {
+    "akaba-tool": "^1.4.10",
+    "node-fetch": "^2.7.0"
   }
 }

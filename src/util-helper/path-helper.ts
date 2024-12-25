@@ -103,8 +103,39 @@ export function getParentPathUntilHas(
     return targetFilePath;
   }
   const parentDirPath = NodePath.dirname(currentPath);
-  if (NodePath.normalize(parentDirPath) === NodePath.normalize(currentPath)) {
+  if (getMayBeRootPath(parentDirPath)) {
     return "";
   }
   return getParentPathUntilHas(parentDirPath, targetFileName);
+}
+
+/**
+ * @since 0.0.4
+ * @param currentPath 
+ * @param getIsMatch 
+ * @returns 
+ */
+export function getParentPathUntilMatch(
+  currentPath: string,
+  getIsMatch: (inputPath: string) => boolean
+): string {
+  const isMatch = getIsMatch(currentPath);
+  if (isMatch) {
+    return currentPath;
+  }
+  const parentDirPath = NodePath.dirname(currentPath);
+  if (getMayBeRootPath(parentDirPath)) {
+    return "";
+  }
+  return getParentPathUntilMatch(currentPath, getIsMatch);
+}
+
+/**
+ * @since 0.0.4
+ * @param fullPath 
+ * @returns 
+ */
+export function getMayBeRootPath(fullPath: string): boolean {
+  const parentDirPath = NodePath.dirname(fullPath);
+  return NodePath.normalize(parentDirPath) === NodePath.normalize(fullPath);
 }

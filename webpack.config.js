@@ -18,7 +18,7 @@ module.exports = {
         filename: "[name].js",
         library: {
             type: "umd",
-            name: "AkabaToolEnvBrowser",
+            name: "AkabaToolEnvNode",
         },
         environment: {
             arrowFunction: false,
@@ -69,5 +69,6 @@ module.exports = {
     },
     externals: {
         "akaba-tool": "akaba-tool",
+        "node-fetch": "node-fetch"
     },
 };

@@ -89,7 +89,7 @@ export function toPosixPath(fullPath: string): string {
 }
 
 /**
- * @since 0.0.4
+ * @since 0.0.5
  * @param currentPath 
  * @param targetFileName 
  * @returns 
@@ -100,7 +100,7 @@ export function getParentPathUntilHas(
 ): string {
   const targetFilePath = NodePath.join(currentPath, targetFileName);
   if (NodeFs.existsSync(targetFilePath)) {
-    return targetFilePath;
+    return currentPath;
   }
   const parentDirPath = NodePath.dirname(currentPath);
   if (getMayBeRootPath(parentDirPath)) {
